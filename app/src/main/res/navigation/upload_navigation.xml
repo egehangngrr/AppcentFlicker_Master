@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/upload_navigation"
+    app:startDestination="@id/uploadListFragment">
+
+    <fragment
+        android:id="@+id/uploadListFragment"
+        android:name="com.example.appcentflickr.fragments.UploadListFragment"
+        android:label="upload_list_fragment"
+        tools:layout="@layout/upload_list_fragment">
+        <action
+            android:id="@+id/goToFullScreen"
+            app:popUpToInclusive="true"
+            app:destination="@id/fullScreenFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/fullScreenFragment"
+        android:name="com.example.appcentflickr.fragments.FullScreenFragment"
+        android:label="fragment_full_screen"
+        tools:layout="@layout/fragment_full_screen">
+        <argument
+            android:name="photoUrl"
+            app:argType="string" />
+    </fragment>
+</navigation>
